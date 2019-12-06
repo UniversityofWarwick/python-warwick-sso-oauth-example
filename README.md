@@ -2,7 +2,7 @@
 
 Simple self-contained Flask application which uses `requests_oauthlib` and Warwick's [OAuth support](https://warwick.ac.uk/services/its/servicessupport/web/sign-on/help/oauth/apis) in single-sign on.
 
-Demonstrates how to log users in, retrieve basic attributes and fetch information from a Warwick application (in this case, form [Tabula](https://github.com/UniversityofWarwick/tabula)).
+Demonstrates how to log users in, retrieve basic attributes and fetch information from a Warwick application (in this case, from [Tabula](https://github.com/UniversityofWarwick/tabula)).
 
 
 # Usage:
