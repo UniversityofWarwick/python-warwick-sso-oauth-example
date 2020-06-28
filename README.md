@@ -31,4 +31,26 @@ Another example, fetching assignments:
 
 http://localhost:8091/oauth/tabula/assignments/?uuid=1b49ee4e-16de-11ea-8625-00d86136d1aa
 
+# Logging/debugging
 
+You can get some useful debugging information from the `requests_oauthlib` which will help you even if you don't plan to implement OAuth 1 using Python. It will show the signature base strings, the normalized URIs, the requests made to single sign-on etc.
+
+```patch
+--- a/main.py
++++ b/main.py
+@@ -2,7 +2,7 @@ import json
+ import urllib
+ import urllib.parse
+ import uuid
+-
++import logging
+ from flask import Flask, redirect, jsonify, request, Response
+ from oauthlib.oauth1 import SIGNATURE_HMAC, SIGNATURE_TYPE_AUTH_HEADER, Client
+ from requests_oauthlib import OAuth1Session
+@@ -137,4 +137,5 @@ def _get_oauth_session_for_request():
+     return oauth
+ 
+ if __name__ == "__main__":
++    logging.basicConfig(level=logging.DEBUG)
+     app.run(host="0.0.0.0", port=8091, debug=False)
+```
